@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator & Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="libraries/p5.js"></script>
+    <script src="utils.js"></script>
+    <script src="cell.js"></script>
+    <script src="maze-generator.js"></script>
+    <script src="Generation-Algorithms/DFS.js"></script>
+    <script src="Generation-Algorithms/Prim's.js"></script>
+    <script src="Generation-Algorithms/Kruskal.js"></script>
+    <script src="Generation-Algorithms/HunAndKill.js"></script>
+    <script src="Solver-Algorithms/DFS-Solver.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <!-- Left Sidebar -->
+    <div class="sidebar left-sidebar">
+        <h1>Maze Generator</h1>
+        <div class="controls">
+            <h2>Generate Maze</h2>
+            <label for="gen-algorithm">Algorithm:</label>
+            <select id="gen-algorithm">
+                <option value="DFS">Depth-First Search</option>
+                <option value="Prims">Prim's Algorithm</option>
+                <option value="HUK">Hunt and Kill</option>
+                <option value="Kruskal">Kruskal's Algorithm</option>
+            </select>
+            <button id="generate">
+                <span id="generate-text">Generate</span>
+                 <!-- <span id="loading-icon" style="display: none;">🔄</span> -->
+            </button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <!-- <h1>Maze Solver</h1>
+        <div class="controls">
+            <h2>Solve Maze</h2>
+            <label for="solve-algorithm">Algorithm:</label>
+            <select id="solve-algorithm">
+                <option value="BFS">Breadth-First Search</option>
+                <option value="DFS">Depth-First Search</option>
+                <option value="Astar">A* Algorithm</option>
+                <option value="Dijkstra">Dijkstra's Algorithm</option>
+            </select>
+            <button id="solve">Solve</button>
+        </div> -->
+        
+    </div>
+
+    <!-- Main Content (Grid + Text Animation) -->
+    <div class="main-content">
+        
+        <div  class="text-header">
+            <p class="line-1 anim-typewriter">Generating and solving a maze...</p>
+        </div>
+        <div id="maze-container">
+
+        </div>
+    </div>
+    
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right-sidebar">
+        <!-- Additional Controls -->
+        <div class="controls">
+            <h2>Animation Control</h2>
+            <button id="pause-resume">Pause</button>
+            <button id="step">Step</button>
+            <button id="complete-generation">Complete Instantly</button>
+        </div>
+
+        <!-- Grid Size Control -->
+        <div class="controls">
+            <h2>Grid Size</h2>
+            <input type="range" id="grid-size" min="10" max="50" value="20">
+            <span id="grid-size-display">20 x 20</span>
+        </div>
+
+        <!-- Speed Control -->
+        <div class="controls">
+            <h2>Speed Control</h2>
+            <input type="range" id="speed-range" min="1" max="90" value="30">
+            <span id="speed-display">30 FPS</span>
+        </div>
+        
+        
+    </div>
+</body>
+
+
+</html>
+
+
+
+
